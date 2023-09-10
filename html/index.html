@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashbord Travel Agency</title>
+  <link rel="stylesheet" href="/style/main.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-light">
+  <div class="container ">
+    <div class="row justify-content-between ">
+      <div class="col-sm-2 ">
+        <h2>Travel360</h2>
+      </div>
+      <div class="col-sm-8">
+        <nav class="navbar ">
+          <div class="container-fluid">
+            <form class="d-flex" role="search">
+              <i class="bi bi-search m-2"></i>
+              <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            </form>
+            <div class="col-sm-2">
+              <i class="bi bi-bell position-relative"><span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">4</span></i>
+              <a class="navbar-brand ps-2">Profile</a>
+            </div>
+
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Dashbord</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Bookings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Booking History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-disabled="true">Travel Deals</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-10">
+
+        <div class="col-sm-12 mt-5">
+          <div class="row row-cols-1 row-cols-md-4 g-2 text-center ">
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Total Sales</h5>
+                  <p class="card-text fs-5">$12618</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Total Booking</h5>
+                  <p class="card-text fs-5">$12618</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Profit</h5>
+                  <p class="card-text fs-5">$12618</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">My Wallet</h5>
+                  <p class="card-text fs-5">$12618</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Order Details</h5>
+                  <p class="card-text">The total number of sessions within the date range. It is the period time a user
+                    is actively engaged with your website, page or app, etc</p>
+                    <div class="d-flex flex-wrap mb-5">
+                      <div class="me-5 mt-1">
+                          <p class="text-muted">Order value</p>
+                          <h3 class="text-primary fs-30 font-weight-medium">12.3k</h3>
+                      </div>
+                      <div class="me-5 mt-1">
+                          <p class="text-muted">Orders</p>
+                          <h3 class="text-primary fs-30 font-weight-medium">14k</h3>
+                      </div>
+                      <div class="me-5 mt-1">
+                          <p class="text-muted">Users</p>
+                          <h3 class="text-primary fs-30 font-weight-medium">71.56%</h3>
+                      </div>
+                      <div class="mt-1">
+                          <p class="text-muted">Downloads</p>
+                          <h3 class="text-primary fs-30 font-weight-medium">34040</h3>
+                      </div>
+                      <canvas id="lineChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Sales Report</h5>
+                  <p class="card-text mt-4">The total number of sessions within the date range. It is the period time a user
+                    is actively engaged with your website, page or app, etc</p>
+                    <canvas id="barChart" class="mt-5"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 mt-5 mb-5">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+ <!-- Order line chart -->
+  <script>
+//line
+var ctxL = document.getElementById("lineChart").getContext('2d');
+
+var myLineChart = new Chart(ctxL, {
+  type: 'line',
+  data: {
+    labels: ["10", "", "", "20", "", "", "30", "", "", "40", "", "", "50", "", "", "60", "", "", "70"],
+    datasets: [{
+      data: [200, 480, 700, 600, 620, 350, 380, 350, 850, "600", "650", "350", "590", "350", "620", "500", "990", "780", "650"],
+      borderColor: [
+                            '#4747A1'
+                        ],
+                        borderWidth: 2,
+                        fill: false,
+                        label: "Orders"
+      
+    },
+    {
+                        data: [400, 450, 410, 500, 480, 600, 450, 550, 460, "560", "450", "700", "450", "640", "550", "650", "400", "850", "800"],
+                        borderColor: [
+                            '#F09397'
+                        ],
+                        borderWidth: 2,
+                        fill: false,
+                        label: "Downloads"
+                    }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+                plugins: {
+                    filler: {
+                        propagate: false
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        ticks: {
+                            display: true,
+                            padding: 10,
+                            fontColor: "#6C7383"
+                        },
+                        gridLines: {
+                            display: false,
+                            drawBorder: false,
+                            color: 'transparent',
+                            zeroLineColor: '#eeeeee'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            display: true,
+                            autoSkip: false,
+                            maxRotation: 0,
+                            stepSize: 200,
+                            min: 200,
+                            max: 1200,
+                            padding: 18,
+                            fontColor: "#6C7383"
+                        },
+                        gridLines: {
+                            display: true,
+                            color: "#f2f2f2",
+                            drawBorder: false
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    enabled: true
+                },
+                elements: {
+                    line: {
+                        tension: .35
+                    },
+                    point: {
+                        radius: 0
+                    }
+                }
+            }
+  
+});
+  </script>
+  <script>
+    //bar
+var ctxB = document.getElementById("barChart").getContext('2d');
+var myBarChart = new Chart(ctxB, {
+  type: 'bar',
+  data: {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+    datasets: [{
+                            label: 'Offline Sales',
+                            data: [480, 230, 470, 210, 330],
+                            backgroundColor: '#98BDFF'
+                        },
+                        {
+                            label: 'Online Sales',
+                            data: [400, 340, 550, 480, 170],
+                            backgroundColor: '#4B49AC'
+                        }
+                    ]
+      
+  },
+  options: {
+                    cornerRadius: 5,
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    layout: {
+                        padding: {
+                            left: 0,
+                            right: 0,
+                            top: 20,
+                            bottom: 0
+                        }
+                    },
+                    scales: {
+                        yAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: true,
+                                drawBorder: false,
+                                color: "#F2F2F2"
+                            },
+                            ticks: {
+                                display: true,
+                                min: 0,
+                                max: 560,
+                                callback: function(value, index, values) {
+                                    return value + '$';
+                                },
+                                autoSkip: true,
+                                maxTicksLimit: 10,
+                                fontColor: "#6C7383"
+                            }
+                        }],
+                        xAxes: [{
+                            stacked: false,
+                            ticks: {
+                                beginAtZero: true,
+                                fontColor: "#6C7383"
+                            },
+                            gridLines: {
+                                color: "rgba(0, 0, 0, 0)",
+                                display: false
+                            },
+                            barPercentage: 1
+                        }]
+                    },
+                    legend: {
+                        display: false
+                    },
+                    elements: {
+                        point: {
+                            radius: 0
+                        }
+                      }
+                    }
+});
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
